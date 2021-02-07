@@ -241,6 +241,10 @@ class HtmlEditorState extends State<HtmlEditor> {
     _controller.evaluateJavascript("\$('#summernote').summernote('focus');");
   }
 
+  Future<String> unfocus() {
+    return _controller.evaluateJavascript('document.activeElement.blur();');
+  }
+
   setEmpty() {
     _controller.evaluateJavascript("\$('#summernote').summernote('reset');");
   }
